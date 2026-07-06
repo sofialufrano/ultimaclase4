@@ -1,0 +1,1296 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: #FDF8F2;
+}
+
+.figma-export {
+  width: 100vw;
+  margin: 0;
+}
+
+.mobile-export {
+  display: none;
+}
+
+.mobile-fixed-header {
+  display: none;
+}
+
+.mobile-page {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.figma-page {
+  display: block;
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.desktop-screen {
+  position: relative;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.desktop-1-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.desktop-screen-1.is-visible .desktop-1-overlay {
+  animation: slow-appear 1400ms ease-out both;
+}
+
+.desktop-1-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  pointer-events: none;
+}
+
+.desktop-1-header {
+  z-index: 50;
+}
+
+.header-word {
+  position: fixed;
+  z-index: 51;
+  display: block;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: transparent;
+  cursor: pointer;
+}
+
+.header-word-base,
+.header-word-active {
+  position: absolute;
+  top: var(--active-top);
+  left: var(--active-left);
+  display: block;
+  width: 100vw;
+  height: 57.65625vw;
+  background-repeat: no-repeat;
+  background-size: 100vw 57.65625vw;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.header-word-base {
+  background-image: url("desktoppage1-header-type.svg");
+  opacity: 1;
+}
+
+.header-word-active {
+  background-image: url("desktoppage1-header-type-active.svg");
+  opacity: 0;
+}
+
+.header-word:hover .header-word-base,
+.header-word:focus-visible .header-word-base {
+  opacity: 0;
+}
+
+.header-word:hover .header-word-active,
+.header-word:focus-visible .header-word-active {
+  opacity: 1;
+}
+
+.header-word-inicio {
+  top: 0.78125vw;
+  left: 41.09375vw;
+  width: 4.375vw;
+  height: 2.03125vw;
+  --active-top: -0.78125vw;
+  --active-left: -41.09375vw;
+}
+
+.header-word-nosotros {
+  top: 0.78125vw;
+  left: 51.09375vw;
+  width: 6.015625vw;
+  height: 2.03125vw;
+  --active-top: -0.78125vw;
+  --active-left: -51.09375vw;
+}
+
+.header-word-funcion {
+  top: 0.78125vw;
+  left: 62.1875vw;
+  width: 5.3125vw;
+  height: 2.03125vw;
+  --active-top: -0.78125vw;
+  --active-left: -62.1875vw;
+}
+
+.header-word-caja {
+  top: 0.78125vw;
+  left: 72.65625vw;
+  width: 3.28125vw;
+  height: 2.03125vw;
+  --active-top: -0.78125vw;
+  --active-left: -72.65625vw;
+}
+
+.header-word-app {
+  top: 0.78125vw;
+  left: 81.5625vw;
+  width: 3.046875vw;
+  height: 2.03125vw;
+  --active-top: -0.78125vw;
+  --active-left: -81.5625vw;
+}
+
+.desktop-2-art {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.desktop-screen-2.is-visible .desktop-2-art {
+  animation: subtle-appear 700ms ease-out both;
+}
+
+.desktop-2-icon {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: visible;
+  background: transparent;
+  cursor: pointer;
+}
+
+.desktop-2-icon-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("desktoppage2-circles.svg");
+  background-repeat: no-repeat;
+  background-size: 100vw 24.6875vw;
+  background-position: var(--icon-position-x) var(--icon-position-y);
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: center center;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.desktop-2-icon:hover .desktop-2-icon-image,
+.desktop-2-icon:focus-visible .desktop-2-icon-image,
+.desktop-2-icon:active .desktop-2-icon-image {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+.desktop-2-icon-1 {
+  top: 9.0625vw;
+  left: 11.796875vw;
+  width: 8.75vw;
+  height: 7.96875vw;
+  --icon-position-x: -11.796875vw;
+  --icon-position-y: -9.0625vw;
+}
+
+.desktop-2-icon-2 {
+  top: 9.0625vw;
+  left: 43.671875vw;
+  width: 8.75vw;
+  height: 7.96875vw;
+  --icon-position-x: -43.671875vw;
+  --icon-position-y: -9.0625vw;
+}
+
+.desktop-2-icon-3 {
+  top: 9.0625vw;
+  left: 76.484375vw;
+  width: 8.75vw;
+  height: 7.96875vw;
+  --icon-position-x: -76.484375vw;
+  --icon-position-y: -9.0625vw;
+}
+
+.desktop-3-art {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.desktop-3-art-1 {
+  z-index: 1;
+}
+
+.desktop-3-art-2 {
+  z-index: 2;
+}
+
+.desktop-screen-3.is-visible .desktop-3-art {
+  animation: slow-appear 1400ms ease-out both;
+}
+
+.desktop-screen-3.is-visible .desktop-3-art-2 {
+  animation-delay: 220ms;
+}
+
+.desktop-4-art {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.desktop-4-art-1 {
+  z-index: 1;
+}
+
+.desktop-4-art-2 {
+  z-index: 2;
+}
+
+.desktop-screen-4.is-visible .desktop-4-art {
+  animation: slow-appear 1400ms ease-out both;
+}
+
+.desktop-screen-4.is-visible .desktop-4-art-1 {
+  animation-delay: 220ms;
+}
+
+.desktop-5-art {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.desktop-5-art-1 {
+  z-index: 1;
+}
+
+.desktop-5-art-2 {
+  z-index: 2;
+}
+
+.desktop-screen-5.is-visible .desktop-5-art {
+  animation: slow-appear 1400ms ease-out both;
+}
+
+.desktop-screen-5.is-visible .desktop-5-art-1 {
+  animation-delay: 220ms;
+}
+
+.desktop-5-icon {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: visible;
+  background: transparent;
+  cursor: pointer;
+}
+
+.desktop-5-icon-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("desktoppage5-overlay-2.svg");
+  background-repeat: no-repeat;
+  background-size: 100vw 40.9375vw;
+  background-position: var(--icon-position-x) var(--icon-position-y);
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: center center;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.desktop-5-icon:hover .desktop-5-icon-image,
+.desktop-5-icon:focus-visible .desktop-5-icon-image,
+.desktop-5-icon:active .desktop-5-icon-image {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+.desktop-5-icon-1 {
+  top: 12.1875vw;
+  left: 13.046875vw;
+  width: 7.8125vw;
+  height: 6.953125vw;
+  --icon-position-x: -13.046875vw;
+  --icon-position-y: -12.1875vw;
+}
+
+.desktop-5-icon-2 {
+  top: 12.109375vw;
+  left: 46.171875vw;
+  width: 7.8125vw;
+  height: 6.953125vw;
+  --icon-position-x: -46.171875vw;
+  --icon-position-y: -12.109375vw;
+}
+
+.desktop-5-icon-3 {
+  top: 11.71875vw;
+  left: 78.90625vw;
+  width: 9.6875vw;
+  height: 7.8125vw;
+  --icon-position-x: -78.90625vw;
+  --icon-position-y: -11.71875vw;
+}
+
+.desktop-6-carousel,
+.desktop-6-slide,
+.desktop-6-controls-art {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.desktop-6-carousel {
+  z-index: 1;
+  pointer-events: none;
+}
+
+.desktop-6-slide {
+  opacity: 0;
+  transform: translateX(0);
+  pointer-events: none;
+}
+
+.desktop-screen-6.is-visible .desktop-6-slide.is-active {
+  opacity: 1;
+}
+
+.desktop-screen-6.is-visible:not(.desktop-6-interacted) .desktop-6-slide.is-active {
+  animation: slow-appear 1400ms ease-out both;
+}
+
+.desktop-screen-6.is-visible.desktop-6-interacted.desktop-6-next .desktop-6-slide.is-active {
+  animation: quick-slide-next 280ms ease-out both;
+}
+
+.desktop-screen-6.is-visible.desktop-6-interacted.desktop-6-prev .desktop-6-slide.is-active {
+  animation: quick-slide-prev 280ms ease-out both;
+}
+
+.desktop-6-controls-art {
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.desktop-screen-6.is-visible .desktop-6-controls-art {
+  animation: slow-appear 1400ms ease-out both;
+}
+
+.desktop-6-control {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.desktop-6-control-prev {
+  top: 23.75vw;
+  left: 14.375vw;
+  width: 5.859375vw;
+  height: 5.15625vw;
+}
+
+.desktop-6-control-next {
+  top: 23.75vw;
+  left: 81.640625vw;
+  width: 5.859375vw;
+  height: 5.15625vw;
+}
+
+.desktop-7-art {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.desktop-7-art-1 {
+  z-index: 1;
+}
+
+.desktop-7-art-2 {
+  z-index: 2;
+}
+
+.desktop-screen-7.is-visible .desktop-7-art {
+  animation: slow-appear 1400ms ease-out both;
+}
+
+.desktop-screen-7.is-visible .desktop-7-art-2 {
+  animation-delay: 220ms;
+}
+
+.desktop-8-art {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.desktop-8-art-1 {
+  z-index: 1;
+}
+
+.desktop-8-art-2 {
+  z-index: 2;
+}
+
+.desktop-screen-8.is-visible .desktop-8-art {
+  animation: slow-appear 1400ms ease-out both;
+}
+
+.desktop-screen-8.is-visible .desktop-8-art-2 {
+  animation-delay: 220ms;
+}
+
+.desktop-8-card {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: visible;
+  background: transparent;
+  cursor: pointer;
+}
+
+.desktop-8-card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("desktoppage8-hover.png");
+  background-repeat: no-repeat;
+  background-size: 100vw 71.640625vw;
+  background-position: var(--card-position-x) var(--card-position-y);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 420ms ease-out;
+}
+
+.desktop-8-card:hover .desktop-8-card-image,
+.desktop-8-card:focus-visible .desktop-8-card-image,
+.desktop-8-card:active .desktop-8-card-image {
+  opacity: 1;
+}
+
+.desktop-8-card-1 {
+  top: 26.40625vw;
+  left: 7.5vw;
+  width: 25.78125vw;
+  height: 31.40625vw;
+  --card-position-x: -7.5vw;
+  --card-position-y: -26.40625vw;
+}
+
+.desktop-8-card-2 {
+  top: 26.40625vw;
+  left: 37.1875vw;
+  width: 25.78125vw;
+  height: 31.40625vw;
+  --card-position-x: -37.1875vw;
+  --card-position-y: -26.40625vw;
+}
+
+.desktop-8-card-3 {
+  top: 26.40625vw;
+  left: 66.875vw;
+  width: 25.78125vw;
+  height: 31.40625vw;
+  --card-position-x: -66.875vw;
+  --card-position-y: -26.40625vw;
+}
+
+.desktop-9-art {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.desktop-9-art-1 {
+  z-index: 1;
+}
+
+.desktop-9-art-2 {
+  z-index: 2;
+}
+
+.desktop-screen-9.is-visible .desktop-9-art {
+  animation: slow-appear 1400ms ease-out both;
+}
+
+.desktop-screen-9.is-visible .desktop-9-art-2 {
+  animation-delay: 220ms;
+}
+
+.desktop-9-carousel,
+.desktop-9-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.desktop-9-carousel {
+  z-index: 3;
+  pointer-events: none;
+}
+
+.desktop-9-slide {
+  opacity: 0;
+  transform: translateX(0);
+  pointer-events: none;
+}
+
+.desktop-screen-9.is-visible .desktop-9-slide.is-active {
+  opacity: 1;
+}
+
+.desktop-screen-9.is-visible:not(.desktop-9-interacted) .desktop-9-slide.is-active {
+  animation: slow-appear 1400ms ease-out both;
+}
+
+.desktop-screen-9.is-visible.desktop-9-interacted.desktop-9-next .desktop-9-slide.is-active {
+  animation: quick-slide-next 280ms ease-out both;
+}
+
+.desktop-screen-9.is-visible.desktop-9-interacted.desktop-9-prev .desktop-9-slide.is-active {
+  animation: quick-slide-prev 280ms ease-out both;
+}
+
+.desktop-9-control {
+  position: absolute;
+  z-index: 4;
+  display: block;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.desktop-9-control-prev {
+  top: 66.484375vw;
+  left: 33.59375vw;
+  width: 3.4375vw;
+  height: 3.4375vw;
+}
+
+.desktop-9-control-next {
+  top: 66.328125vw;
+  left: 61.484375vw;
+  width: 3.4375vw;
+  height: 3.4375vw;
+}
+
+@keyframes subtle-appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slow-appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes quick-slide-next {
+  from {
+    opacity: 0;
+    transform: translateX(4vw);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes quick-slide-prev {
+  from {
+    opacity: 0;
+    transform: translateX(-4vw);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 1279px), (hover: none) and (pointer: coarse) {
+  html,
+  body {
+    overflow-x: hidden;
+    background: #000;
+  }
+
+  .figma-export {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 76px;
+    background: #000;
+  }
+
+  .desktop-screen {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 0;
+    scroll-margin-top: 76px;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .figma-page {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    min-width: 0;
+    max-width: none;
+    height: auto;
+    min-height: 0;
+    object-fit: contain;
+    object-position: center top;
+    opacity: 1;
+    transform: none;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .desktop-1-overlay,
+  .desktop-2-art,
+  .desktop-3-art,
+  .desktop-4-art,
+  .desktop-5-art,
+  .desktop-6-controls-art,
+  .desktop-7-art,
+  .desktop-8-art,
+  .desktop-9-art {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin: 0;
+    min-width: 0;
+    max-width: none;
+    height: auto;
+    min-height: 0;
+    object-fit: contain;
+    object-position: center top;
+    opacity: 1;
+    transform: none;
+    pointer-events: none;
+  }
+
+  .figma-page {
+    position: relative;
+    opacity: 1;
+  }
+
+  .desktop-1-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 76px;
+    object-fit: cover;
+    object-position: top center;
+    background: #000;
+    z-index: 50;
+  }
+
+  .header-word {
+    position: fixed;
+    top: 46px;
+    height: 28px;
+    width: auto;
+    overflow: visible;
+    font: 700 12px/1 Arial, Helvetica, sans-serif;
+    color: #bd58d7;
+    text-align: center;
+    z-index: 51;
+  }
+
+  .header-word-base,
+  .header-word-active {
+    display: none;
+  }
+
+  .header-word::before {
+    content: attr(aria-label);
+  }
+
+  .header-word:hover,
+  .header-word:focus-visible {
+    color: #f8c5ff;
+  }
+
+  .header-word-inicio {
+    left: 5vw;
+  }
+
+  .header-word-nosotros {
+    left: 24vw;
+  }
+
+  .header-word-funcion {
+    left: 48vw;
+  }
+
+  .header-word-caja {
+    left: 70vw;
+  }
+
+  .header-word-app {
+    left: 87vw;
+  }
+
+  .desktop-6-carousel,
+  .desktop-9-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    height: 100%;
+    min-height: 0;
+    pointer-events: none;
+  }
+
+  .desktop-6-carousel {
+    aspect-ratio: 1280 / 709;
+  }
+
+  .desktop-9-carousel {
+    aspect-ratio: 1280 / 1180;
+  }
+
+  .desktop-6-slide,
+  .desktop-9-slide {
+    position: absolute;
+    inset: 0;
+    display: block;
+    grid-area: 1 / 1;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: contain;
+    object-position: center top;
+    opacity: 0;
+    transform: none;
+    pointer-events: none;
+  }
+
+  .desktop-6-slide.is-active,
+  .desktop-9-slide.is-active {
+    opacity: 1;
+  }
+
+  .desktop-screen-8::after {
+    content: none;
+  }
+
+  .desktop-6-control,
+  .desktop-9-control {
+    position: absolute;
+    display: block;
+    width: 7vw;
+    height: 7vw;
+    min-width: 34px;
+    min-height: 34px;
+    border-radius: 0;
+    background: transparent;
+    color: transparent;
+    font: inherit;
+    z-index: 8;
+  }
+
+  .desktop-6-control::before,
+  .desktop-9-control::before {
+    content: none;
+  }
+
+  .desktop-6-control-prev::before,
+  .desktop-9-control-prev::before {
+    content: none;
+  }
+
+  .desktop-6-control-next::before,
+  .desktop-9-control-next::before {
+    content: none;
+  }
+
+  .desktop-6-control-prev {
+    top: 23.75vw;
+    left: 14.375vw;
+  }
+
+  .desktop-6-control-next {
+    top: 23.75vw;
+    left: 81.640625vw;
+  }
+
+  .desktop-9-control-prev {
+    top: 66.484375vw;
+    left: 33.59375vw;
+  }
+
+  .desktop-9-control-next {
+    top: 66.328125vw;
+    left: 61.484375vw;
+  }
+
+  .figma-export {
+    display: none;
+  }
+
+  .mobile-export {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #FDF8F2;
+  }
+
+  .mobile-screen {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #FDF8F2;
+  }
+
+  .mobile-page {
+    width: 100%;
+    max-width: none;
+    height: auto;
+  }
+
+  html,
+  body {
+    background: #FDF8F2;
+  }
+
+  .mobile-fixed-header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(92vw, 430px);
+    height: 58px;
+    padding: 0 22px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.36);
+    box-shadow: 0 4px 22px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(12px);
+    transform: translateX(-50%);
+  }
+
+  .mobile-header-logo {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    font: italic 800 28px/1 Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    letter-spacing: -3px;
+  }
+
+  .mobile-menu-button {
+    display: grid;
+    gap: 6px;
+    width: 42px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .mobile-menu-button span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    border-radius: 999px;
+    background: #000;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 14px;
+    display: none;
+    min-width: 172px;
+    padding: 14px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(14px);
+  }
+
+  .mobile-fixed-header.is-open .mobile-menu {
+    display: grid;
+    gap: 12px;
+  }
+
+  .mobile-menu a {
+    color: #000;
+    font: 600 18px/1.2 Arial, Helvetica, sans-serif;
+    text-decoration: none;
+  }
+
+  .figma-export {
+    display: none;
+  }
+
+  .mobile-export {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 96px 0 0;
+    overflow: hidden;
+    background: #FDF8F2;
+  }
+
+  .mobile-screen {
+    width: 100%;
+    max-width: 430px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    scroll-margin-top: 96px;
+    background: #FDF8F2;
+  }
+
+  .mobile-shot-crop {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #FDF8F2;
+  }
+
+  .mobile-shot-crop .mobile-page {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .mobile-shot-crop .mobile-page.mobile-page-full-slide {
+    margin-top: 0;
+  }
+
+  .mobile-shot-first .mobile-page {
+    margin-top: max(-133px, -31vw);
+  }
+
+  .mobile-carousel-image {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 220ms ease, transform 260ms ease;
+  }
+
+  .mobile-carousel-image.is-sliding-next {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+
+  .mobile-carousel-image.is-sliding-prev {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+
+  .mobile-carousel-control {
+    position: absolute;
+    z-index: 2;
+    width: 14vw;
+    max-width: 64px;
+    min-width: 48px;
+    aspect-ratio: 1;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.42);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+  }
+
+  .mobile-carousel-control::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 19px;
+    height: 19px;
+    border-top: 2px solid #222;
+    border-left: 2px solid #222;
+    transform-origin: center;
+  }
+
+  .mobile-carousel-prev {
+    top: 67%;
+    left: 16%;
+  }
+
+  .mobile-carousel-next {
+    top: 67%;
+    right: 16%;
+  }
+
+  .mobile-carousel-prev::before {
+    transform: translate(-35%, -50%) rotate(-45deg);
+  }
+
+  .mobile-carousel-next::before {
+    transform: translate(-65%, -50%) rotate(135deg);
+  }
+}
+
+@media (max-width: 1279px) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+    background: #FDF8F2;
+  }
+
+  .figma-export {
+    display: none !important;
+  }
+
+  .mobile-fixed-header {
+    display: flex !important;
+  }
+
+  .mobile-export {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 96px;
+    background: #FDF8F2;
+  }
+
+  .mobile-screen {
+    display: block;
+    width: 100%;
+    max-width: 430px;
+    overflow: hidden;
+    background: #FDF8F2;
+  }
+
+  .mobile-page {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .mobile-fixed-header,
+  .mobile-export {
+    display: none !important;
+  }
+
+  .figma-export {
+    display: block;
+  }
+}
+
+body.is-mobile-layout {
+  overflow-x: hidden;
+  background: #FDF8F2;
+}
+
+body.is-mobile-layout .figma-export {
+  display: none !important;
+}
+
+body.is-mobile-layout .mobile-fixed-header {
+  display: flex !important;
+}
+
+body.is-mobile-layout .mobile-export {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 96px;
+  background: #FDF8F2;
+}
+
+body.is-mobile-layout .mobile-screen {
+  display: block;
+  width: 100%;
+  max-width: 430px;
+  overflow: hidden;
+  background: #FDF8F2;
+}
+
+body.is-mobile-layout .mobile-page {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.is-mobile-layout .mobile-shot-first .mobile-page {
+  margin-top: max(-133px, -31vw);
+}
+
+body.is-desktop-layout .mobile-fixed-header,
+body.is-desktop-layout .mobile-export {
+  display: none !important;
+}
+
+body.is-desktop-layout .figma-export {
+  display: block;
+}
